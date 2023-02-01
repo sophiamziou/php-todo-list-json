@@ -31,10 +31,8 @@
             </div>
             <div class="row my-3">
                 <div class="col-4">
-                    <form action="server.php" method="post">
-                        <input type="text" class="form-control" name="todoinput" id="todolist" placeholder="add task">
-                        <button class="btn btn-primary my-3" type="submit">submit</button>
-                    </form>
+                    <input type="text" class="form-control" id="todolist" placeholder="add task" v-model="newTask">
+                    <button class="btn btn-primary my-3" type="submit" @click="addTask()">submit</button>
                 </div>
             </div>
         </div>

@@ -1,8 +1,8 @@
 <?php
 $todos = json_decode(file_get_contents('./todolist.json'), true);
 
-if (isset($_POST['todoinput'])) {
-    $todoName = $_POST['todoinput'];
+if (isset($_GET['addTask'])) {
+    $todoName = $_GET['addTask'];
     $todos[] = ["task" => $todoName, "done" => false];
 }
 
