@@ -1,5 +1,7 @@
 <?php
-echo 'Benvenuto con php'
+$json = file_get_contents('./todolist.json');
+$data = json_decode($json);
+var_dump($data)
     ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -16,8 +18,31 @@ echo 'Benvenuto con php'
 
 <body>
     <div id="app">
-        <div>
-            {{ message }}
+        <div class="container my-4">
+            <div class="row">
+                <div class="col">
+                    <h1>TO DO LIST</h1>
+                </div>
+            </div>
+            <div class="row my-3">
+                <div class="col-4">
+                    <ul class="list-group">
+                        <li class="list-group-item">An item</li>
+                        <li class="list-group-item">A second item</li>
+                        <li class="list-group-item">A third item</li>
+                        <li class="list-group-item">A fourth item</li>
+                        <li class="list-group-item">And a fifth one</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="row my-3">
+                <div class="col-4">
+                    <form action="">
+                        <input type="text" class="form-control" name="todoinput" id="todolist" placeholder="add task">
+                        <button class="btn btn-primary my-3" type="submit">submit</button>
+                    </form>
+                </div>
+            </div>
         </div>
     </div>
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>

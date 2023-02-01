@@ -5,7 +5,7 @@ const {
 createApp({
     data(){
         return{
-            message: 'Benvenuto con vue',
+            
         }
     }
 }).mount('#app')
