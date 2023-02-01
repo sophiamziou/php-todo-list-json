@@ -4,6 +4,7 @@ createApp({
   data() {
     return {
       listaUrl: "server.php",
+      deleteUrl: "delete.php",
       todoList: [],
       newTask: "",
     };
@@ -22,7 +23,7 @@ createApp({
       let params = {
         deleteTask: index,
       };
-      axios.get(this.listaUrl, { params }).then((result) => {
+      axios.get(this.deleteUrl, { params }).then((result) => {
         this.todoList = result.data;
       });
     },
