@@ -9,7 +9,6 @@
         integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
     <link rel="stylesheet" href="./css/style.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.20.0/axios.min.js"></script>
-
     <title>Document</title>
 </head>
 
@@ -24,7 +23,7 @@
             <div class="row my-3">
                 <div class="col-4">
                     <ul class="list-group">
-                        <li class="list-group-item" v-for="(object, index) in todolist">
+                        <li class="list-group-item" v-for="(object,index) in todoList">
                             {{object.task}}
                         </li>
                     </ul>
@@ -32,7 +31,7 @@
             </div>
             <div class="row my-3">
                 <div class="col-4">
-                    <form action="">
+                    <form action="server.php" method="post">
                         <input type="text" class="form-control" name="todoinput" id="todolist" placeholder="add task">
                         <button class="btn btn-primary my-3" type="submit">submit</button>
                     </form>

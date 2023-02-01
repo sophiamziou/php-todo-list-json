@@ -6,13 +6,12 @@ createApp({
     data(){
         return{
             listaUrl:'server.php',
-            todolist: [],
-            newTask:'',
+            todoList: [],
         }
     },
     mounted(){
         axios.get(this.listaUrl).then((result) => {
-            this.todolist = result.data
+            this.todoList = result.data
         })
     }
 }).mount('#app')
