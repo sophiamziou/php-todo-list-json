@@ -6,6 +6,11 @@ if (isset($_GET['addTask'])) {
     $todos[] = ["task" => $todoName, "done" => false];
 }
 
+if (isset($_GET['deleteTask'])) {
+    $todoName = $_GET['deleteTask'];
+    array_splice($todoName, 2);
+}
+
 file_put_contents('./todolist.json', json_encode($todos, JSON_PRETTY_PRINT));
 
 header('Content-Type: application/json');

@@ -18,6 +18,14 @@ createApp({
         this.todoList = result.data;
       });
     },
+    deleteTask(index) {
+      let params = {
+        deleteTask: index,
+      };
+      axios.get(this.listaUrl, { params }).then((result) => {
+        this.todoList = result.data;
+      });
+    },
   },
   mounted() {
     axios.get(this.listaUrl).then((result) => {
