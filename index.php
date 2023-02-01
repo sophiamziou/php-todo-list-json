@@ -1,8 +1,3 @@
-<?php
-$json = file_get_contents('./todolist.json');
-$data = json_decode($json);
-var_dump($data)
-    ?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -13,6 +8,8 @@ var_dump($data)
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
     <link rel="stylesheet" href="./css/style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.20.0/axios.min.js"></script>
+
     <title>Document</title>
 </head>
 
@@ -27,11 +24,9 @@ var_dump($data)
             <div class="row my-3">
                 <div class="col-4">
                     <ul class="list-group">
-                        <li class="list-group-item">An item</li>
-                        <li class="list-group-item">A second item</li>
-                        <li class="list-group-item">A third item</li>
-                        <li class="list-group-item">A fourth item</li>
-                        <li class="list-group-item">And a fifth one</li>
+                        <li class="list-group-item" v-for="(object, index) in todolist">
+                            {{object.task}}
+                        </li>
                     </ul>
                 </div>
             </div>
