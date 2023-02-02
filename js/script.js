@@ -11,14 +11,27 @@ createApp({
   },
   methods: {
     addTask() {
-      let params = {
+      const data = {
         addTask: this.newTask,
       };
-      axios.get(this.listaUrl, { params }).then((result) => {
-        this.newTask = "";
-        this.todoList = result.data;
-      });
+      axios
+        .post(this.listaUrl, data, {
+          headers: { "Content-Type": "multipart/form-data" },
+        })
+        .then((response) => {
+          this.newTask = "";
+          this.todoList = response.data;
+        });
     },
+    // addTask() {
+    //   let params = {
+    //     addTask: this.newTask,
+    //   };
+    //   axios.get(this.listaUrl, { params }).then((result) => {
+    //     this.newTask = "";
+    //     this.todoList = result.data;
+    //   });
+    // },
     deleteTask(index) {
       let params = {
         deleteTask: index,

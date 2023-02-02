@@ -29,7 +29,9 @@
                         <li class="list-group-item" v-for="(object,index) in todoList">
                             <button class="btn btn-sm btn-danger" @click="deleteTask(index)"><i
                                     class="fa-solid fa-trash"></i></button>
-                            <span class="mx-2">
+                            <button class="btn btn-sm btn-warning mx-2" @click="editTask(index)"><i
+                                    class="fa-solid fa-pen"></i></button>
+                            <span>
                                 {{object.task}}
                             </span>
                         </li>

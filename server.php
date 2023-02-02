@@ -1,13 +1,18 @@
 <?php
 $todos = json_decode(file_get_contents('./todolist.json'), true);
 
-if (isset($_GET['addTask'])) {
-    $todoName = $_GET['addTask'];
+$condition = $_POST['addTask'] ?? '';
+$condition = trim($condition);
+
+if ($condition) {
+    $todoName = $_POST['addTask'];
     $todos[] = ["task" => $todoName, "done" => false];
+} else {
+    $message = 'ERRORE!!';
 }
 
-if (isset($_GET['deleteTask'])) {
-    unset($todos[$_GET['deleteTask']]);
+if (isset($_POST['deleteTask'])) {
+    unset($todos[$_POST['deleteTask']]);
 }
 
 file_put_contents('./todolist.json', json_encode($todos, JSON_PRETTY_PRINT));
