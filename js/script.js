@@ -23,22 +23,17 @@ createApp({
           this.todoList = response.data;
         });
     },
-    // addTask() {
-    //   let params = {
-    //     addTask: this.newTask,
-    //   };
-    //   axios.get(this.listaUrl, { params }).then((result) => {
-    //     this.newTask = "";
-    //     this.todoList = result.data;
-    //   });
-    // },
     deleteTask(index) {
-      let params = {
+      const data = {
         deleteTask: index,
       };
-      axios.get(this.listaUrl, { params }).then((result) => {
-        this.todoList = result.data;
-      });
+      axios
+        .post(this.listaUrl, data, {
+          headers: { "Content-Type": "multipart/form-data" },
+        })
+        .then((response) => {
+          this.todoList = response.data;
+        });
     },
   },
   mounted() {
