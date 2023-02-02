@@ -1,14 +1,14 @@
 <?php
 
-$todos = json_decode(file_get_contents('./todolist.json'), true);
+// $todos = json_decode(file_get_contents('./todolist.json'), true);
 
-if (isset($_GET['deleteTask'])) {
-    unset($todos[$_GET['deleteTask']]);
-}
+// if (isset($_GET['deleteTask'])) {
+//     unset($todos[$_GET['deleteTask']]);
+// }
 
-file_put_contents('./todolist.json', json_encode($todos, JSON_PRETTY_PRINT));
+// file_put_contents('./todolist.json', json_encode($todos, JSON_PRETTY_PRINT));
 
-header('Content-Type: application/json');
+// header('Content-Type: application/json');
 
-echo file_get_contents('./todolist.json');
+// echo file_get_contents('./todolist.json');
 ?>
